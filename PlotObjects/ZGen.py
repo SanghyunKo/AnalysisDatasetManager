@@ -65,9 +65,9 @@ info = {
     "ZMass": {  
         "Initialize": {  
             "type": "TH1F",
-            "nbins": 200,
-            "xmin": 50,
-            "xmax": 250
+            "nbins": 2000,
+            "xmin": 81, #50,
+            "xmax": 101, #150
         },
         "Attributes": {  
             "GetXaxis().SetTitle": "m_{\\ell^{+}\\ell^{-}} [GeV]" if uw else "m_{Z}",  
@@ -75,6 +75,36 @@ info = {
             "GetYaxis().SetTitleOffset": 1.3,
             "SetMinimum" : 0.1,
             "SetMaximum" : 15000000
+        }
+    },
+    "ZMassWide": {
+        "Initialize": {
+            "type": "TH1F",
+            "nbins": 2000,
+            "xmin": 0, #50,
+            "xmax": 4000, #150
+        },
+        "Attributes": {
+            "GetXaxis().SetTitle": "m_{\\ell^{+}\\ell^{-}} [GeV]" if uw else "m_{Z}",
+            "GetYaxis().SetTitle": "Events / GeV",
+            "GetYaxis().SetTitleOffset": 1.3,
+            "SetMinimum" : 0.1,
+            "SetMaximum" : 15000000
+        }
+    },
+    "ZMassLog": {
+        "Initialize": {
+            "type": "TH1F",
+            "nbins": 2000,
+            "xmin": 0, #50,
+            "xmax": 3.6, #150
+        },
+        "Attributes": {
+            "GetXaxis().SetTitle": "m_{\\ell^{+}\\ell^{-}} [GeV]" if uw else "log10(m_{Z})",
+            "GetYaxis().SetTitle": "Events",
+            "GetYaxis().SetTitleOffset": 1.3,
+            "SetMinimum" : 0.1,
+            "SetMaximum" : 150000000
         }
     },
    "ptl1": {  
@@ -165,6 +195,21 @@ info = {
             "SetMaximum" : 15000000
         }
     },
+	"nLeptons": {
+		"Initialize": {
+			"type": "TH1F",
+			"nbins": 10,
+			"xmin": 0,
+			"xmax": 10
+		},
+		"Attributes": {
+			"GetXaxis().SetTitle": "nl",
+			"GetYaxis().SetTitle": "Events",
+			"GetYaxis().SetTitleOffset": 1.2,
+			"SetMinimum" : 0,
+			"SetMaximum" : 150000000
+		}
+	},
    "ptj1": {  
         "Initialize": {  
             "type": "TH1D",
@@ -270,7 +315,85 @@ info = {
             "SetMaximum" : 150000000
         }
     },
-   "MET": {  
+    "dRl1l2": {
+        "Initialize": {
+            "type": "TH1D",
+            "nbins": 100,
+            "xmin": 0,
+            "xmax": 8
+        },
+        "Attributes": {
+            "GetXaxis().SetTitle:": "#Delta R(l1l2)",
+            "GetYaxis().SetTitle:": "Events",
+            "GetYaxis().SetTitleOffset": 1.2,
+        }
+    },
+    "dRj1l1": {
+        "Initialize": {
+            "type": "TH1D",
+            "nbins": 100,
+            "xmin": 0,
+            "xmax": 8
+        },
+        "Attributes": {
+            "GetXaxis().SetTitle:": "#Delta R(j1l1)",
+            "GetYaxis().SetTitle:": "Events",
+            "GetYaxis().SetTitleOffset": 1.2,
+        }
+    },
+    "dRj1l2": {
+        "Initialize": {
+            "type": "TH1D",
+            "nbins": 100,
+            "xmin": 0,
+            "xmax": 8
+        },
+        "Attributes": {
+            "GetXaxis().SetTitle:": "#Delta R(j1l2)",
+            "GetYaxis().SetTitle:": "Events",
+            "GetYaxis().SetTitleOffset": 1.2,
+        }
+    },
+    "dRj2l1": {
+        "Initialize": {
+            "type": "TH1D",
+            "nbins": 100,
+            "xmin": 0,
+            "xmax": 8
+        },
+        "Attributes": {
+            "GetXaxis().SetTitle:": "#Delta R(j2l1)",
+            "GetYaxis().SetTitle:": "Events",
+            "GetYaxis().SetTitleOffset": 1.2,
+        }
+    },
+    "dRj2l2": {
+        "Initialize": {
+            "type": "TH1D",
+            "nbins": 100,
+            "xmin": 0,
+            "xmax": 8
+        },
+        "Attributes": {
+            "GetXaxis().SetTitle:": "#Delta R(j2l2)",
+            "GetYaxis().SetTitle:": "Events",
+            "GetYaxis().SetTitleOffset": 1.2,
+        }
+    },
+    "dRj1j2": {
+        "Initialize": {
+            "type": "TH1D",
+            "nbins": 100,
+            "xmin": 0,
+            "xmax": 8
+        },
+        "Attributes": {
+            "GetXaxis().SetTitle:": "#Delta R(j1j2)",
+            "GetYaxis().SetTitle:": "Events",
+            "GetYaxis().SetTitleOffset": 1.2,
+        }
+    },
+    "MET": {  
         "Initialize": {  
             "type": "TH1D",
             "nbins": 100,
@@ -282,26 +405,6 @@ info = {
             "GetYaxis().SetTitle": "Events / GeV",
             "GetYaxis().SetTitleOffset": 1.2,
             "SetMinimum" : 0.1,
-        }
-    },
-   "mass_y_pT_3D": {  
-        "Initialize": {  
-            "type": "TH3D",
-            "nbinsx": 1,
-            "xmin": 50,
-            "xmax": 13000,
-            "nbinsy": 1,
-            "ymin": -10.,
-            "ymax": 10.,
-            "nbinsz": 50,
-            "zmin": 0.,
-            "zmax": 50.,
-        },
-        "Attributes": {  
-            "GetXaxis().SetTitle": "Gen Lepton p_{T} [GeV]",  
-            "GetYaxis().SetTitle": "Events / GeV",
-            "GetYaxis().SetTitleOffset": 1.2,
-            "SetMaximum" : 30000000
         }
     },
     "CutFlow": {  
